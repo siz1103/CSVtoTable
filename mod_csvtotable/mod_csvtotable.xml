@@ -1,12 +1,12 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<extension type="module" version="1.1" method="upgrade" client="site" >
+<extension type="module" version="1.0" method="upgrade" client="site" >
 	<name>CSV to Table</name>
     <author>SiZ</author>
     <copyright></copyright>
     <license>GNU/GPL</license>
     <authorEmail>ilsistemistico@gmail.com</authorEmail>
     <authorUrl>https://github.com/siz1103</authorUrl>
-    <version>1.1</version>
+    <version>1.0</version>
 	<description>
         This module creates table from CSV files. Load your CSV file to images dir and the module create your html table.
     </description>

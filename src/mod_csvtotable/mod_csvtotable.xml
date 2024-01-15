@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<extension type="module" version="0.3" method="upgrade" client="site" >
+	<name>CSV to Table</name>
+    <author>Simone Zini</author>
+    <copyright></copyright>
+    <license>GNU/GPL</license>
+    <authorEmail>ilsistemistico@gmail.com</authorEmail>
+    <authorUrl>https://github.com/siz1103</authorUrl>
+    <version>0.3</version>
+	<description>
+        This module creates table from CSV files. Load your CSV file to images dir and the module create your html table.
+    </description>
+   	<updateservers>
+		<server type="extension" priority="1" name="CSV to Table">
+		   https://github.com/siz1103
+		</server>
+	</updateservers>
+	<files>
+    <filename module="mod_csvtotable">mod_csvtotable.php</filename>
+    <filename>index.html</filename>
+    <folder>tmpl</folder>
+    <folder>js</folder>
+    </files>
+    <languages>
+    	  <language tag="en-GB">language/en-GB/en-GB.mod_csvtotable.ini</language>
+    </languages>
+    <config>
+    <fields name="params">
+     <fieldset name="basic">
+        <field name="alert_file" 
+            type="note" 
+            class="alert alert-info" 
+            label="MOD_CSVTOTABLE_ALERT_LABEL" 
+            description="MOD_CSVTOTABLE_ALERT_DESC" />
+
+        <field name="fileurl" 
+            type="filelist" 
+            directory="images" 
+            filter="\.csv$"  
+            label="MOD_CSVTOTABLE_FILE_LABEL" 
+            description="MOD_CSVTOTABLE_FILE_DESC" />
+
+        <field name="separator" 
+            type="list" 
+            default=","
+            label="MOD_CSVTOTABLE_SEPARATOR_LABEL" 
+            description="MOD_CSVTOTABLE_SEPARATOR_DESC" >
+                <option value=",">,</option>
+                <option value=";">;</option>
+                <option value=".">.</option>
+        </field>
+
+        <field
+			name="search"
+			type="radio"
+			default="1"
+			layout="joomla.form.field.radio.switcher"
+			label="MOD_CSVTOTABLE_SEARCH_LABEL"
+			description="MOD_CSVTOTABLE_SEARCH_DESC">
+				<option value="0">JHIDE</option>
+				<option value="1">JSHOW</option>
+	    </field>
+
+        <field name="min_char" 
+            type="apslide"
+	    	default="2"
+	    	data-slider-range="1,12"
+	    	data-slider-step="1"
+	    	label="MOD_CSVTOTABLE_MINCHAR_LABEL"
+	    	description="MOD_CSVTOTABLE_MINCHAR_DESC"
+	    	showon="search:1" />
+
+        <field name="search_placeholder" 
+            type="text" default="Search for ..."  
+            label="MOD_CSVTOTABLE_SEARCH_PLACEHOLDER_LABEL" 
+            description="MOD_CSVTOTABLE_SEARCH_PLACEHOLDER_DESC" 
+            showon="search:1" />
+
+        <field name="table_text_align" 
+            type="list" 
+            default="center" 
+            label="MOD_CSVTOTABLE_TEXTALIGN_LABEL" 
+            description="MOD_CSVTOTABLE_TEXTALIGN_DESC" >
+                <option value="left">MOD_CSVTOTABLE_LEFT</option>
+                <option value="center">MOD_CSVTOTABLE_CENTER</option>
+                <option value="right">MOD_CSVTOTABLE_RIGHT</option>
+        </field>
+
+        <field name="table_font_size" 
+	    	type="apslide"
+	    	default="12"
+	    	data-slider-range="8,32"
+	    	data-slider-step="4"
+            append="px"
+	    	data-content="data-content"
+	    	label="MOD_CSVTOTABLE_TABLEFONTSIZE_LABEL"
+	    	description="MOD_CSVTOTABLE_TABLEFONTSIZE_DESC"/>
+
+        <field name="note_header" 
+            type="spacer" 
+            label="MOD_CSVTOTABLE_NOTEHEADER" />
+
+        <field name="header_bg" 
+            default="#FF0000" 
+            type="color" 
+            label="MOD_CSVTOTABLE_HEADERBG_LABEL" 
+            description="MOD_CSVTOTABLE_HEADERBG_DESC" />
+
+        <field name="header_text_color" 
+            default="#FFF" 
+            type="color" 
+            label="MOD_CSVTOTABLE_HEADERTEXTCOLOR_LABEL" 
+            description="MOD_CSVTOTABLE_HEADERTEXTCOLOR_DESC" />
+
+        <field name="header_font_size" 
+            type="apslide"
+	    	default="20"
+	    	data-slider-range="8,32"
+	    	data-slider-step="4"
+            append="px"
+	    	data-content="data-content"
+	    	label="MOD_CSVTOTABLE_HEADERFONTSIZE_LABEL"
+	    	description="MOD_CSVTOTABLE_HEADERFONTSIZE_DESC"/>
+
+        <field name="note_row" 
+            type="spacer" 
+            label="MOD_CSVTOTABLE_NOTEROW" />
+
+        <field name="even_bg" 
+            default="#dddddd" 
+            type="color" 
+            label="MOD_CSVTOTABLE_EVENBG_LABEL" 
+            description="MOD_CSVTOTABLE_EVENBG_DESC" />
+
+        <field name="odd_bg" 
+            default="#FFF" 
+            type="color" 
+            label="MOD_CSVTOTABLE_ODDBG_LABEL" 
+            description="MOD_CSVTOTABLE_ODDBG_DESC" />
+
+ </fieldset>
+
+    </fields>
+
+    </config>
+
+    </extension>

@@ -12,7 +12,7 @@
     </description>
    	<updateservers>
 		<server type="extension" priority="1" name="CSV to Table">
-		   https://github.com/siz1103/CSVtoTable/blob/main/update.xml
+		   https://raw.githubusercontent.com/siz1103/CSVtoTable/main/update.xml
 		</server>
 	</updateservers>
 	<files>
